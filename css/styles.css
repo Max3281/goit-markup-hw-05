@@ -49,15 +49,12 @@ body {
   width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  /* border: 1px solid tomato; */
 }
 
 .header-flex {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 32px 0; */
-  /* border: 1px solid black; */
 }
 
 .logo {
@@ -100,12 +97,6 @@ body {
 }
 
 /* link */
-.current:hover,
-.current:focus,
-.current:active {
-  color: var(--color-hover);
-}
-
 .link {
   display: flex;
   align-items: center;
@@ -118,6 +109,8 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   padding: 32px 0;
+  transition: fill 250ms, color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -135,6 +128,14 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   padding: 32px 0;
+  transition: fill 250ms, color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current:hover,
+.current:focus,
+.current:active {
+  color: var(--color-hover);
 }
 
 .current::after {
@@ -143,7 +144,7 @@ body {
   height: 4px;
   border-radius: 2px;
   background-color: var(--color-hover);
-  bottom: 0;
+  bottom: -1px;
   content: '';
 }
 
@@ -161,6 +162,8 @@ body {
   margin: 0 auto;
   border: none;
   border-radius: 4px;
+  transition: background-color 250ms, color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .primary-buttons:hover,
@@ -171,6 +174,8 @@ body {
 }
 
 .secondary-buttons {
+  color: inherit;
+  background-color: #f5f4fa;
   font-family: inherit;
   font-weight: 500;
   font-size: inherit;
@@ -180,6 +185,8 @@ body {
   padding: 8px 25px;
   border-radius: 5px;
   letter-spacing: 0.03em;
+  transition: background-color 250ms, color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .secondary-buttons:hover,
@@ -251,7 +258,6 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  /* padding: 25px 0; */
   background-color: #f5f4fa;
   margin-bottom: 30px;
 }
@@ -328,10 +334,17 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  fill: #afb1b8;
+  background-color: var(--color-link);
+  transition: background-color 250ms, fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ourteam-icons-color {
-  fill: #afb1b8;
+  /* fill: #afb1b8;
+  background-color: var(--color-link);
+  transition: background-color 250ms, fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .ourteam-icons:hover,
@@ -413,6 +426,8 @@ body {
   border: 1px solid #afb1b8;
   border-radius: 4px;
   fill: var(--color-secondary);
+  transition: border 250ms, fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-block:hover,
@@ -444,6 +459,8 @@ body {
   line-height: 1.7;
   letter-spacing: 0.02em;
   color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link:hover,
@@ -481,10 +498,14 @@ body {
   height: 44px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons-color {
   fill: #afb1b8;
+  transition: fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-icons:hover,
@@ -545,16 +566,24 @@ body {
   position: absolute;
   top: 8px;
   right: 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-link);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  fill: currentColor;
+  transition: fill 250ms, border 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close-button-modal-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.close-button-modal:hover,
+.close-button-modal:focus {
+  border-color: var(--color-hover);
+  fill: var(--color-hover);
 }
 
 /* portfolio page */
@@ -628,6 +657,8 @@ body {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
+/* .portfoliolink-flex:hover .portfolio-overlay-description */
 
 .portlinkdecript-flex {
   padding: 20px 24px;
